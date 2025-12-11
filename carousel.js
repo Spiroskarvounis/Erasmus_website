@@ -29,3 +29,16 @@ setInterval(() => {
 
 // Initial update
 updateCarousel();
+
+// Only sparkle effect remains, no emoji popup logic
+function addSparkleEffect() {
+    document.querySelectorAll('.outputs-list li').forEach((li) => {
+        li.addEventListener('mouseenter', () => {
+            li.classList.add('sparkle');
+        });
+        li.addEventListener('mouseleave', () => {
+            li.classList.remove('sparkle');
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', addSparkleEffect);

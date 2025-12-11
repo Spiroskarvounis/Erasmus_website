@@ -160,6 +160,8 @@ body {
     border-radius: 32px;
     box-shadow: 0 2px 24px rgba(0,0,0,0.10);
     color: #fff;
+    position: relative;
+    overflow: hidden;
 }
 
 .carousel-slide[style*="background: #fff"] {
@@ -167,11 +169,26 @@ body {
 }
 
 .carousel-slide span {
+    position: relative;
+    z-index: 1;
     background: rgba(0,51,153,0.08);
     padding: 16px 40px;
     border-radius: 14px;
     font-size: 2rem;
     box-shadow: 0 2px 12px rgba(0,51,153,0.10);
+}
+
+.carousel-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: none;
+    margin: 0;
+    z-index: 0;
 }
 
 .carousel-btn {
@@ -466,6 +483,32 @@ body {
     box-shadow: 0 2px 8px rgba(0,51,153,0.10);
 }
 
+.videos-section .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+}
+.videos-section .video-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,51,153,0.10);
+    padding: 18px 12px;
+    width: 340px;
+    margin-bottom: 24px;
+    text-align: center;
+    border-left: 6px solid #003399;
+}
+.videos-section video {
+    display: block;
+    margin: 0 auto;
+}
+
 .main-logo-wrapper {
     display: flex;
     justify-content: center;
@@ -483,6 +526,193 @@ body {
     border-radius: 32px;
     box-shadow: 0 8px 48px rgba(0,51,153,0.12);
     background: #fff;
+}
+
+.objectives-section {
+    max-width: 900px;
+    margin: 48px auto;
+    background: linear-gradient(120deg, #f7faff 60%, #e3e9ff 100%);
+    border-radius: 32px;
+    box-shadow: 0 4px 32px rgba(0,51,153,0.08);
+    padding: 40px 48px;
+    color: #003399;
+    text-align: left;
+}
+.objectives-section h2 {
+    font-size: 2.2rem;
+    color: #003399;
+    margin-bottom: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.objectives-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.objectives-list li {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,51,153,0.10);
+    padding: 18px 24px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.objectives-list li:hover {
+    box-shadow: 0 8px 32px rgba(0,51,153,0.18);
+    transform: translateY(-2px) scale(1.02);
+}
+.objective-icon {
+    font-size: 2.1rem;
+    margin-right: 18px;
+    flex-shrink: 0;
+}
+.objective-text {
+    color: #003399;
+    font-size: 1.18rem;
+    font-weight: 500;
+}
+.outputs-section {
+    max-width: 900px;
+    margin: 48px auto;
+    background: linear-gradient(120deg, #e3e9ff 0%, #f7faff 100%);
+    border-radius: 40px;
+    box-shadow: 0 8px 48px rgba(0,51,153,0.12);
+    padding: 48px 56px;
+    color: #003399;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+.outputs-section h2 {
+    font-size: 2.3rem;
+    color: #003399;
+    margin-bottom: 36px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 2px 8px #e3e9ff;
+}
+.outputs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.outputs-list li {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #fff 80%, #e3e9ff 100%);
+    border-radius: 22px;
+    box-shadow: 0 4px 24px rgba(0,51,153,0.14);
+    padding: 26px 38px;
+    font-size: 1.28rem;
+    font-weight: 500;
+    transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 0;
+}
+.outputs-list li:hover {
+    box-shadow: 0 8px 32px rgba(0,51,153,0.18);
+    background: linear-gradient(90deg, #e3e9ff 60%, #fff 100%);
+    transform: scale(1.03);
+    z-index: 2;
+}
+.outputs-list li[data-emoji]:hover::after {
+    content: none;
+}
+.outputs-list li .emoji-popup {
+    display: none;
+}
+.output-icon {
+    font-size: 2.1rem;
+    margin-right: 18px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 8px #e3e9ff);
+}
+.output-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #4f5bd5 0%, #003399 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,51,153,0.18);
+    margin-left: 18px;
+    margin-right: 8px;
+    letter-spacing: 1px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+.output-badge:hover {
+    background: linear-gradient(90deg, #003399 0%, #4f5bd5 100%);
+    box-shadow: 0 4px 24px rgba(0,51,153,0.22);
+    transform: scale(1.08);
+}
+.outputs-highlight {
+    margin-top: 40px;
+    background: linear-gradient(90deg, #fff 60%, #e3e9ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,51,153,0.10);
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #003399;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+}
+@media (max-width: 1000px) {
+    .objectives-section {
+        padding: 18px 8vw;
+    }
+    .objectives-list li {
+        font-size: 1rem;
+        padding: 12px 10px;
+    }
+    .objective-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    .outputs-section {
+        padding: 18px 8vw;
+    }
+    .outputs-list li {
+        font-size: 1rem;
+        padding: 12px 10px;
+    }
+    .output-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    .output-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        margin-left: 8px;
+    }
+    .outputs-highlight {
+        padding: 12px 8px;
+        font-size: 1rem;
+        gap: 8px;
+    }
+    .highlight-icon {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 1200px) {
